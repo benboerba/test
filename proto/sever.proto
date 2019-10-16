@@ -1,0 +1,13 @@
+syntax="proto3";
+
+package command;
+
+message CSLogin
+{
+	uint64 userid	= 1;
+}
+
+message SCLogin
+{
+	uint64 userid	= 1;
+}

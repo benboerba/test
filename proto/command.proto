@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+package command;
+
+enum Command {
+    dummy = 0;
+    // Gateway消息号定义[消息号范围 1-10000]
+    CSLogin      = 1;
+    SCLogin      = 2;
+}
