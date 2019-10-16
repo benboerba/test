@@ -33,21 +33,23 @@ func main() {
 		// fmt.Println(str1)
 		// msg = []byte(str)
 		// conn.Write(msg)
-		info := []uint64{1, 2, 3, 4, 5, 6}
-		tmp := &command.CSChooseHero{
-			Userid: 123,
-			Info:   info,
+		for i := 0; i < 5; i++ {
+			info := []uint64{1, 2, 3, 4, 5, 6}
+			tmp := &command.CSChooseHero{
+				Userid: 123,
+				Info:   info,
+			}
+			data, _ := proto.Marshal(tmp)
+			str2 := string(data)
+			var msgid uint16
+			msgid = 3
+			msg := []byte(strconv.FormatInt(int64(msgid), 10))
+			str1 := string(msg)
+			str := str1 + str2
+			fmt.Println(str1)
+			msg = []byte(str)
+			conn.Write(msg)
 		}
-		data, _ := proto.Marshal(tmp)
-		str2 := string(data)
-		var msgid uint16
-		msgid = 3
-		msg := []byte(strconv.FormatInt(int64(msgid), 10))
-		str1 := string(msg)
-		str := str1 + str2
-		fmt.Println(str1)
-		msg = []byte(str)
-		conn.Write(msg)
 	}()
 
 	//切片缓冲
