@@ -7,4 +7,6 @@ enum Command {
     // Gateway消息号定义[消息号范围 1-10000]
     CSLogin      = 1;
     SCLogin      = 2;
+    CSChooseHero = 3;
+    SCChooseHero = 4;
 }

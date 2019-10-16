@@ -98,19 +98,151 @@ func (m *SCLogin) GetUserid() uint64 {
 	return 0
 }
 
+type SCError struct {
+	Errorid              uint64   `protobuf:"varint,1,opt,name=errorid,proto3" json:"errorid,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *SCError) Reset()         { *m = SCError{} }
+func (m *SCError) String() string { return proto.CompactTextString(m) }
+func (*SCError) ProtoMessage()    {}
+func (*SCError) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e1ca773a84dec372, []int{2}
+}
+
+func (m *SCError) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SCError.Unmarshal(m, b)
+}
+func (m *SCError) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SCError.Marshal(b, m, deterministic)
+}
+func (m *SCError) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SCError.Merge(m, src)
+}
+func (m *SCError) XXX_Size() int {
+	return xxx_messageInfo_SCError.Size(m)
+}
+func (m *SCError) XXX_DiscardUnknown() {
+	xxx_messageInfo_SCError.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SCError proto.InternalMessageInfo
+
+func (m *SCError) GetErrorid() uint64 {
+	if m != nil {
+		return m.Errorid
+	}
+	return 0
+}
+
+type CSChooseHero struct {
+	Userid               uint64   `protobuf:"varint,1,opt,name=userid,proto3" json:"userid,omitempty"`
+	Info                 []uint64 `protobuf:"varint,2,rep,packed,name=info,proto3" json:"info,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *CSChooseHero) Reset()         { *m = CSChooseHero{} }
+func (m *CSChooseHero) String() string { return proto.CompactTextString(m) }
+func (*CSChooseHero) ProtoMessage()    {}
+func (*CSChooseHero) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e1ca773a84dec372, []int{3}
+}
+
+func (m *CSChooseHero) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_CSChooseHero.Unmarshal(m, b)
+}
+func (m *CSChooseHero) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_CSChooseHero.Marshal(b, m, deterministic)
+}
+func (m *CSChooseHero) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_CSChooseHero.Merge(m, src)
+}
+func (m *CSChooseHero) XXX_Size() int {
+	return xxx_messageInfo_CSChooseHero.Size(m)
+}
+func (m *CSChooseHero) XXX_DiscardUnknown() {
+	xxx_messageInfo_CSChooseHero.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_CSChooseHero proto.InternalMessageInfo
+
+func (m *CSChooseHero) GetUserid() uint64 {
+	if m != nil {
+		return m.Userid
+	}
+	return 0
+}
+
+func (m *CSChooseHero) GetInfo() []uint64 {
+	if m != nil {
+		return m.Info
+	}
+	return nil
+}
+
+type SCChooseHero struct {
+	Flag                 uint64   `protobuf:"varint,1,opt,name=flag,proto3" json:"flag,omitempty"`
+	XXX_NoUnkeyedLiteral struct{} `json:"-"`
+	XXX_unrecognized     []byte   `json:"-"`
+	XXX_sizecache        int32    `json:"-"`
+}
+
+func (m *SCChooseHero) Reset()         { *m = SCChooseHero{} }
+func (m *SCChooseHero) String() string { return proto.CompactTextString(m) }
+func (*SCChooseHero) ProtoMessage()    {}
+func (*SCChooseHero) Descriptor() ([]byte, []int) {
+	return fileDescriptor_e1ca773a84dec372, []int{4}
+}
+
+func (m *SCChooseHero) XXX_Unmarshal(b []byte) error {
+	return xxx_messageInfo_SCChooseHero.Unmarshal(m, b)
+}
+func (m *SCChooseHero) XXX_Marshal(b []byte, deterministic bool) ([]byte, error) {
+	return xxx_messageInfo_SCChooseHero.Marshal(b, m, deterministic)
+}
+func (m *SCChooseHero) XXX_Merge(src proto.Message) {
+	xxx_messageInfo_SCChooseHero.Merge(m, src)
+}
+func (m *SCChooseHero) XXX_Size() int {
+	return xxx_messageInfo_SCChooseHero.Size(m)
+}
+func (m *SCChooseHero) XXX_DiscardUnknown() {
+	xxx_messageInfo_SCChooseHero.DiscardUnknown(m)
+}
+
+var xxx_messageInfo_SCChooseHero proto.InternalMessageInfo
+
+func (m *SCChooseHero) GetFlag() uint64 {
+	if m != nil {
+		return m.Flag
+	}
+	return 0
+}
+
 func init() {
 	proto.RegisterType((*CSLogin)(nil), "command.CSLogin")
 	proto.RegisterType((*SCLogin)(nil), "command.SCLogin")
+	proto.RegisterType((*SCError)(nil), "command.SCError")
+	proto.RegisterType((*CSChooseHero)(nil), "command.CSChooseHero")
+	proto.RegisterType((*SCChooseHero)(nil), "command.SCChooseHero")
 }
 
 func init() { proto.RegisterFile("sever.proto", fileDescriptor_e1ca773a84dec372) }
 
 var fileDescriptor_e1ca773a84dec372 = []byte{
-	// 87 bytes of a gzipped FileDescriptorProto
+	// 160 bytes of a gzipped FileDescriptorProto
 	0x1f, 0x8b, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0xff, 0xe2, 0xe2, 0x2e, 0x4e, 0x2d, 0x4b,
 	0x2d, 0xd2, 0x2b, 0x28, 0xca, 0x2f, 0xc9, 0x17, 0x62, 0x4f, 0xce, 0xcf, 0xcd, 0x4d, 0xcc, 0x4b,
 	0x51, 0x52, 0xe4, 0x62, 0x77, 0x0e, 0xf6, 0xc9, 0x4f, 0xcf, 0xcc, 0x13, 0x12, 0xe3, 0x62, 0x2b,
 	0x2d, 0x4e, 0x2d, 0xca, 0x4c, 0x91, 0x60, 0x54, 0x60, 0xd4, 0x60, 0x09, 0x82, 0xf2, 0x40, 0x4a,
-	0x82, 0x9d, 0xf1, 0x2a, 0x49, 0x62, 0x03, 0x9b, 0x6a, 0x0c, 0x08, 0x00, 0x00, 0xff, 0xff, 0x51,
-	0x60, 0x0b, 0x73, 0x64, 0x00, 0x00, 0x00,
+	0x82, 0x9d, 0xf1, 0x2b, 0x51, 0x06, 0x29, 0x71, 0x2d, 0x2a, 0xca, 0x2f, 0x12, 0x92, 0xe0, 0x62,
+	0x4f, 0x05, 0x31, 0xe0, 0x6a, 0x60, 0x5c, 0x25, 0x2b, 0x2e, 0x1e, 0xe7, 0x60, 0xe7, 0x8c, 0xfc,
+	0xfc, 0xe2, 0x54, 0x8f, 0xd4, 0xa2, 0x7c, 0x5c, 0x86, 0x09, 0x09, 0x71, 0xb1, 0x64, 0xe6, 0xa5,
+	0xe5, 0x4b, 0x30, 0x29, 0x30, 0x6b, 0xb0, 0x04, 0x81, 0xd9, 0x4a, 0x4a, 0x5c, 0x3c, 0xc1, 0xce,
+	0x48, 0x7a, 0x85, 0xb8, 0x58, 0xd2, 0x72, 0x12, 0xd3, 0xa1, 0x3a, 0xc1, 0xec, 0x24, 0x36, 0xb0,
+	0xd7, 0x8c, 0x01, 0x01, 0x00, 0x00, 0xff, 0xff, 0x4d, 0xf6, 0xdc, 0xdd, 0xe9, 0x00, 0x00, 0x00,
 }

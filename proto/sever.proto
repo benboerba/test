@@ -11,3 +11,22 @@ message SCLogin
 {
 	uint64 userid	= 1;
 }
+
+message SCError
+{
+	uint64 errorid = 1;
+}
+
+
+
+message CSChooseHero
+{
+	uint64 userid = 1;
+	repeated uint64 info = 2;
+}
+
+message SCChooseHero
+{
+	uint64 flag = 1;
+}
+
